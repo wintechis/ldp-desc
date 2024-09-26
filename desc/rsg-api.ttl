@@ -1,0 +1,66 @@
+@prefix rsg: <http://localhost:8082/rsg/index#> .
+@prefix ready: <http://localhost:8082/ready/index#> .
+@prefix set: <http://localhost:8082/set/index#> .
+@prefix go: <http://localhost:8082/go/index#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix http: <http://www.w3.org/2011/http#> .
+@prefix : <#> .
+
+<> a owl:Ontology ;
+   dc:title "Ready-set-go Server API" ;
+   owl:versionInfo "0.1.0" ;
+#   rdfs:seeAlso ( :group-rsg :group-ready :group-set :group-go ) ;
+   rdfs:seeAlso rsg:CREATE-POST-rsg-id-201 , rsg:READ-rsg-id-200 , rsg:RPC-rsg-id-200 , rsg:DELETE-rsg-id-410 .
+
+:group-rsg
+	rdfs:label "Ready-set-go" ;
+	rdfs:seeAlso rsg:CREATE-POST-rsg-id-201 , rsg:RPC-rsg-id-200 , rsg:DELETE-rsg-id-410 .
+
+:group-ready
+	rdfs:label "Ready" ;
+	rdfs:seeAlso ready:CREATE-PUT-ready-id-201 .
+
+:group-set
+	rdfs:label "Set" ;
+	rdfs:seeAlso set:CREATE-PUT-set-id-201 .
+
+:group-go
+	rdfs:label "Go" ;
+	rdfs:seeAlso set:CREATE-PUT-go-id-201 .
+
+rsg:CREATE-POST-rsg-id-201
+	rdfs:label "Create /rsg/{id} and subordinate resources" ;
+	http:req [ http:method "POST" ; http:absolutePath "/rsg/index" ;
+			   http:resp [ http:statusCodeNumber 201 ] ] .
+
+rsg:READ-rsg-id-200
+	rdfs:label "Read /rsg/{id}" ;
+	http:req [ http:method "GET" ; http:absolutePath "/rsg/{id}" ;
+			   http:resp [ http:statusCodeNumber 200 ] ] .
+
+rsg:RPC-rsg-id-200
+	rdfs:label "Reinitialise /rsg/{id}" ;
+	http:req [ http:method "POST" ; http:absolutePath "/rsg/{id}" ;
+		   http:resp [ http:statusCodeNumber 200 ] ] .
+
+rsg:DELETE-rsg-id-410
+	rdfs:label "Delete /rsg/{id} and subordinate resources" ;
+	http:req [ http:method "DELETE" ; http:absolutePath "/rsg/{id}" ;
+		   http:resp [ http:statusCodeNumber 410 ] ] .
+
+ready:CREATE-PUT-ready-id-201
+	rdfs:label "Create /ready/{id} and advance /rsg/{id} to READY" ;
+	http:req [ http:method "PUT" ; http:absolutePath "/ready/{id}" ;
+		   http:resp [ http:statusCodeNumber 201 ] ] .
+
+set:CREATE-PUT-set-id-201
+	rdfs:label "Create /set/{id} and advance /rsg/{id} to SET" ;
+	http:req [ http:method "PUT" ; http:absolutePath "/set/{id}" ;
+		   http:resp [ http:statusCodeNumber 201 ] ] .
+
+go:CREATE-PUT-go-id-201
+	rdfs:label "Create /go/{id} and advance /rsg/{id} to GO" ;
+	http:req [ http:method "PUT" ; http:absolutePath "/go/{id}" ;
+		   http:resp [ http:statusCodeNumber 201 ] ] .

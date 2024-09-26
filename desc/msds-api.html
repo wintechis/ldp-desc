@@ -1,0 +1,90 @@
+<html>
+  <head>
+  <title>Minimal Solid Dataspace Server API</title>
+  <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+  <h1>Minimal Solid Dataspace Server API</h1>
+  <dl><dt>versionInfo</dt>
+  <dd>0.1.0 (Waischenfeld)</dd></dl>
+  <h2>Hosts</h2>
+<p>The collection resource for hosts identified via hostname.</p>
+<details class="interaction put">
+<summary><span class="method put">PUT</span>
+<span class="path">/msds/{hostname}/</span>
+<span class="label">Create /msds/{hostname}/ collection resource</span></summary>
+<p>foobar</p>
+<p>201</p><a href="file:///#CREATE-PUT-hostname-201">file:///#CREATE-PUT-hostname-201</a></details>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/</span>
+<span class="label">Retrieve information about /msds/{hostname}/</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#GET-hostname-200">file:///#GET-hostname-200</a></details>
+<details class="interaction delete">
+<summary><span class="method delete">DELETE</span>
+<span class="path">/msds/{hostname}/</span>
+<span class="label">Delete /msds/{hostname}/ and subordinate resources</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#DELETE-hostname-200">file:///#DELETE-hostname-200</a></details>
+<h2>RuuviTag Sensors</h2>
+<p>The collection resource for RuuviTag sensor nodes identified via MAC address.</p>
+<details class="interaction put">
+<summary><span class="method put">PUT</span>
+<span class="path">/msds/{hostname}/{mac}/</span>
+<span class="label">Create /msds/{hostname}/{mac}/ collection resource</span></summary>
+<p>foobar</p>
+<p>201</p><a href="file:///#CREATE-PUT-mac-201">file:///#CREATE-PUT-mac-201</a></details>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/{mac}/</span>
+<span class="label">Retrieve information about /msds/{hostname}/{mac}/</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#READ-mac-200">file:///#READ-mac-200</a></details>
+<details class="interaction delete">
+<summary><span class="method delete">DELETE</span>
+<span class="path">/msds/{hostname}/{mac}/</span>
+<span class="label">Delete /msds/{hostname}/{mac}/ and subordinate resources</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#DELETE-mac-200">file:///#DELETE-mac-200</a></details>
+<h2>Sensor Observations</h2>
+<p>The sensor observations by date (@@@fix) in SOSA/SSN vocabulary.</p>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/{mac}/acceleration-x/</span>
+<span class="label">Retrieve information about /msds/{hostname}/{mac}/acceleration-x/</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#GET-accel-x-200">file:///#GET-accel-x-200</a></details>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/{mac}/acceleration-y/</span>
+<span class="label">Retrieve information about /msds/{hostname}/{mac}/acceleration-y/</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#GET-accel-y-200">file:///#GET-accel-y-200</a></details>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/{mac}/acceleration-z/</span>
+<span class="label">Retrieve information about /msds/{hostname}/{mac}/acceleration-z/</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#GET-accel-z-200">file:///#GET-accel-z-200</a></details>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/{mac}/humidity/</span>
+<span class="label">List humidity sensor data files from {mac} on {hostname}</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#GET-humidity-200">file:///#GET-humidity-200</a></details>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/{mac}/pressure/</span>
+<span class="label">List atmospheric pressure sensor data files from {mac} on {hostname}</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#GET-pressure-200">file:///#GET-pressure-200</a></details>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/{mac}/temperature/</span>
+<span class="label">List temperature sensor data files from {mac} on {hostname}</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#GET-temperature-200">file:///#GET-temperature-200</a></details>
+
+  </body>
+  </html>

@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "@ldo/ldo": "^0.0.1-alpha.26"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist/",
+    "build": "ldo build --input .shapes --output .ldo ; tsc",
+    "lint": "eslint . --ext .ts",
+    "test": "mocha dist/test/",
+    "ldo:build": "ldo build --input .shapes --output .ldo",
+    "build:ldo": "ldo build --input src/.shapes --output src/.ldo"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "@ldo/cli": "^0.0.1-alpha.26",
+    "@types/chai": "^4.3.4",
+    "@types/jsonld": "^1.5.15",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.18",
+    "@types/shexj": "^2.1.7",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "chai": "^4.3.7",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "globals": "^15.8.0",
+    "madge": "^7.0.0",
+    "mocha": "^10.2.0",
+    "rimraf": "^4.4.0",
+    "typedoc": "^0.26.4",
+    "typescript": "^4.9.4"
+  },
+  "name": "ldp-api-spec",
+  "description": "Generate a HTML documentation of Linked Data Platform AOIs",
+  "version": "0.1.0",
+  "author": "Andreas Harth",
+  "license": "GNU Affero General Public License v3.0"
+}
