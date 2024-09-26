@@ -1,12 +1,10 @@
 # Descriptions of Linked Data Platform (LDP) Interfaces
 
-npm install
+    $ npm install
+    $ npm run build
+    $ cat desc/msds-api.ttl | node dist/src/index.js > desc/msds-api.html
 
-npm run build
-
-cat desc/msds-api.ttl | node dist/src/index.js > desc/msds-api.htm
-
-## See also
+## See Also
 
 https://github.com/Interactions-HSG/wot-td-java/tree/master/samples
 
