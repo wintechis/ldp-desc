@@ -1,36 +1,67 @@
 <html>
+
   <head>
-  <title>Ready-set-go Server API</title>
-  <link rel="stylesheet" href="style.css"/>
+    <title>Ready-set-go Server API</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-  <h1>Ready-set-go Server API</h1>
-  <dl><dt>versionInfo</dt>
-  <dd>0.1.0</dd></dl>
-  <details class="interaction post">
-<summary><span class="method post">POST</span>
-<span class="path">/rsg/index</span>
-<span class="label">Create /rsg/{id} and subordinate resources</span></summary>
-<p>foobar</p>
-<p>201</p><a href="http://localhost:8082/rsg/index#CREATE-POST-rsg-id-201">http://localhost:8082/rsg/index#CREATE-POST-rsg-id-201</a></details>
-<details class="interaction get">
-<summary><span class="method get">GET</span>
-<span class="path">/rsg/{id}</span>
-<span class="label">Read /rsg/{id}</span></summary>
-<p>foobar</p>
-<p>200</p><a href="http://localhost:8082/rsg/index#READ-rsg-id-200">http://localhost:8082/rsg/index#READ-rsg-id-200</a></details>
-<details class="interaction post">
-<summary><span class="method post">POST</span>
-<span class="path">/rsg/{id}</span>
-<span class="label">Reinitialise /rsg/{id}</span></summary>
-<p>foobar</p>
-<p>200</p><a href="http://localhost:8082/rsg/index#RPC-rsg-id-200">http://localhost:8082/rsg/index#RPC-rsg-id-200</a></details>
-<details class="interaction delete">
-<summary><span class="method delete">DELETE</span>
-<span class="path">/rsg/{id}</span>
-<span class="label">Delete /rsg/{id} and subordinate resources</span></summary>
-<p>foobar</p>
-<p>410</p><a href="http://localhost:8082/rsg/index#DELETE-rsg-id-410">http://localhost:8082/rsg/index#DELETE-rsg-id-410</a></details>
+    <h1>Ready-set-go Server API</h1>
+    <dl>
+      <dt>versionInfo</dt>
+      <dd>0.1.0</dd>
+    </dl>
+    <h2>Ready-set-go</h2>
+    <p>The ready-set-go process with three steps.</p>
+    <details id="rsg/indexCREATE-POST-rsg-id-201" class="interaction post">
+      <summary><span class="method post">POST</span>
+        <span class="path">/rsg/index</span>
+        <span class="label">Create /rsg/{id} and subordinate resources</span>
+      </summary>
+      <p>201</p><a href="rsg/index#CREATE-POST-rsg-id-201">rsg/index#CREATE-POST-rsg-id-201</a>
+    </details>
+    <details id="rsg/indexRPC-rsg-id-200" class="interaction post">
+      <summary><span class="method post">POST</span>
+        <span class="path">/rsg/{id}</span>
+        <span class="label">Reinitialise /rsg/{id}</span>
+      </summary>
+      <p>200</p><a href="rsg/index#RPC-rsg-id-200">rsg/index#RPC-rsg-id-200</a>
+    </details>
+    <details id="rsg/indexDELETE-rsg-id-410" class="interaction delete">
+      <summary><span class="method delete">DELETE</span>
+        <span class="path">/rsg/{id}</span>
+        <span class="label">Delete /rsg/{id} and subordinate resources</span>
+      </summary>
+      <p>410</p><a href="rsg/index#DELETE-rsg-id-410">rsg/index#DELETE-rsg-id-410</a>
+    </details>
+    <h2>Ready</h2>
+    <p>The first step.</p>
+    <details id="ready/indexCREATE-PUT-ready-id-201" class="interaction put">
+      <summary><span class="method put">PUT</span>
+        <span class="path">/ready/{id}</span>
+        <span class="label">Create /ready/{id} and advance /rsg/{id} to READY</span>
+      </summary>
+      <p>201</p><a href="ready/index#CREATE-PUT-ready-id-201">ready/index#CREATE-PUT-ready-id-201</a>
+    </details>
+    <h2>Set</h2>
+    <p>The second step.</p>
+    <details id="set/indexCREATE-PUT-set-id-201" class="interaction put">
+      <summary><span class="method put">PUT</span>
+        <span class="path">/set/{id}</span>
+        <span class="label">Create /set/{id} and advance /rsg/{id} to SET</span>
+      </summary>
+      <p>201</p><a href="set/index#CREATE-PUT-set-id-201">set/index#CREATE-PUT-set-id-201</a>
+    </details>
+    <h2>Go</h2>
+    <p>The third (and final) step.</p>
+    <details id="go/indexCREATE-PUT-go-id-201" class="interaction put">
+      <summary><span class="method put">PUT</span>
+        <span class="path">/go/{id}</span>
+        <span class="label">Create /go/{id} and advance /rsg/{id} to GO</span>
+      </summary>
+      <p>201</p><a href="go/index#CREATE-PUT-go-id-201">go/index#CREATE-PUT-go-id-201</a>
+    </details>
 
   </body>
-  </html>
+
+</html>
