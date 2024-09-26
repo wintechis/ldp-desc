@@ -11,7 +11,7 @@ import { run } from './generate';
 import { readFileSync } from 'fs';
 
 // handle ctrl-c
-process.on('SIGINT', function() {
+process.on('SIGINT', function () {
 	console.log('SIGINT, stopping...');
 	process.exit(-2);
 });
@@ -24,7 +24,7 @@ function usage() {
 }
 
 async function main2() {
-    let data = readFileSync(0, 'utf-8');
+	let data = readFileSync(0, 'utf-8');
 
 	await run(data);
 }
@@ -35,7 +35,7 @@ try {
 		process.exit(1);
 	}
 
-    void main2();
+	void main2();
 } catch (e) {
 	console.error(e);
 }

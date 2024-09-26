@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "@ldo/ldo": "^0.0.1-alpha.26"
+    "@ldo/ldo": "^0.0.1-alpha.26",
+    "pretty": "^2.0.0"
   },
   "scripts": {
     "prebuild": "rimraf dist/",

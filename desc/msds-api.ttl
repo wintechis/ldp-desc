@@ -106,7 +106,7 @@
 :GET-accel-z-200
 	rdfs:label "Acceleration z-axis sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration.{srj,html}" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-z.{srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :GET-humidity-200
