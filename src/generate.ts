@@ -7,13 +7,12 @@
  * @module
  */
 
-import { parseRdf } from "@ldo/ldo";
-import { LdpApiDescShapeType } from "../.ldo/ldpApiDesc.shapeTypes";
-import { HttpConnection, HttpRequest } from "../.ldo/ldpApiDesc.typings";
+import { parseRdf } from '@ldo/ldo';
+import { LdpApiDescShapeType } from '../.ldo/ldpApiDesc.shapeTypes';
+import { HttpConnection, HttpRequest } from '../.ldo/ldpApiDesc.typings';
+import { html_beautify as htmlBeautify } from 'js-beautify';
 
-var pretty = require('pretty');
-
-const BASE = "file:///";
+const BASE = 'file:///';
 
 export async function run(turtle: string) {
     const ldo = await parseRdf(turtle, {
@@ -35,7 +34,7 @@ ${renderConnections(apiDesc.seeAlso)}
 </body>
 </html>`;
 
-    console.log(pretty(html));
+    console.log(htmlBeautify(html));
 }
 
 function renderConnections(items: HttpConnection[] | undefined) {
@@ -60,7 +59,7 @@ function renderRequestResponse(items: HttpRequest[] | undefined) {
     }
 
     for (const item of items) {
-        let id = item['@id']?.replace(BASE, '');
+        const id = item['@id']?.replace(BASE, '');
 
         if (id === undefined) {
             return result;

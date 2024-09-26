@@ -24,7 +24,7 @@ function usage() {
 }
 
 async function main2() {
-	let data = readFileSync(0, 'utf-8');
+	const data = readFileSync(0, 'utf-8');
 
 	await run(data);
 }

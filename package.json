@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "@ldo/ldo": "^0.0.1-alpha.26",
-    "pretty": "^2.0.0"
+      "@ldo/ldo": "^0.0.1-alpha.26",
+      "js-beautify": "^1.15.1"
   },
   "scripts": {
     "prebuild": "rimraf dist/",
@@ -15,6 +15,7 @@
     "@eslint/js": "^9.7.0",
     "@ldo/cli": "^0.0.1-alpha.26",
     "@types/chai": "^4.3.4",
+    "@types/js-beautify": "^1.14.3",
     "@types/jsonld": "^1.5.15",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.18",
