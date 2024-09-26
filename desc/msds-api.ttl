@@ -7,7 +7,7 @@
 <> a owl:Ontology ;
    dc:title "Minimal Solid Dataspace Server API" ;
    owl:versionInfo "0.1.0 (Waischenfeld)" ;
-   rdfs:seeAlso :hostname , :mac , :obs .
+   rdfs:seeAlso :hostname , :mac , :date , :obs .
 
 :hostname http:requests :CREATE-PUT-hostname-201 , :GET-hostname-200, :DELETE-hostname-200 ;
 	  rdfs:label "Hosts" ;
@@ -17,9 +17,13 @@
      rdfs:label "RuuviTag Sensors" ;
      rdfs:comment "The collection resource for RuuviTag sensor nodes identified via MAC address." .
 
-:obs http:requests :GET-accel-x-200, :GET-accel-y-200 , :GET-accel-z-200 , :GET-humidity-200 , :GET-pressure-200 , :GET-temperature-200 ;
+:date http:requests :CREATE-PUT-date-201 , :READ-date-200 , :DELETE-date-200 ;
+     rdfs:label "Date" ;
+     rdfs:comment "The collection resource for sensor data by date." .
+
+:obs http:requests :GET-csv-200 , :GET-turtle-200 , :GET-accel-x-200 , :GET-accel-y-200 , :GET-accel-z-200 , :GET-humidity-200 , :GET-pressure-200 , :GET-temperature-200 ;
      rdfs:label "Sensor Observations" ;
-     rdfs:comment "The sensor observations by date (@@@fix) in SOSA/SSN vocabulary." .
+     rdfs:comment "The sensor observations in CSV, Turtle using the SOSA/SSN vocabulary, SPARQL Results Format and HTML. @@@format of the meta file?" .
 
 :CREATE-PUT-hostname-201
 	rdfs:label "Create /msds/{hostname}/ collection resource" ;
@@ -57,38 +61,68 @@
 	http:absolutePath "/msds/{hostname}/{mac}/" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
-:GET-accel-x-200
-	rdfs:label "Retrieve information about /msds/{hostname}/{mac}/acceleration-x/" ;
+:CREATE-PUT-date-201
+	rdfs:label "Create /msds/{hostname}/{mac}/{date}/ collection resource" ;
+	http:method "PUT" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/" ;
+	http:resp [ http:statusCodeNumber 201 ] .
+
+:READ-date-200
+	rdfs:label "Retrieve information about /msds/{hostname}/{mac}/{date}/" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/acceleration-x/" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
+:DELETE-date-200
+	rdfs:label "Delete /msds/{hostname}/{mac}/{date}/ and subordinate resources" ;
+	http:method "DELETE" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
+:GET-csv-200
+	rdfs:label "Sensor data from {mac} on {hostname} for {date} in CSV" ;
+	http:method "GET" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/data.csv";
+	http:resp [ http:statusCodeNumber 200 ] .
+
+:GET-turtle-200
+	rdfs:label "Sensor data from {mac} on {hostname} for {date} in Turtle" ;
+	http:method "GET" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/data.ttl";
+	http:resp [ http:statusCodeNumber 200 ] .
+
+:GET-accel-x-200
+	rdfs:label "Acceleration x-axis sensor data files from {mac} on {hostname} for {date}" ;
+	http:method "GET" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-x.{srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :GET-accel-y-200
-	rdfs:label "Retrieve information about /msds/{hostname}/{mac}/acceleration-y/" ;
+	rdfs:label "Acceleration y-axis sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/acceleration-y/" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-y.{srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :GET-accel-z-200
-	rdfs:label "Retrieve information about /msds/{hostname}/{mac}/acceleration-z/" ;
+	rdfs:label "Acceleration z-axis sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/acceleration-z/" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration.{srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :GET-humidity-200
-	rdfs:label "List humidity sensor data files from {mac} on {hostname}" ;
+	rdfs:label "Humidity sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/humidity/" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/humidity.{srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ]  .
 
 :GET-pressure-200
-	rdfs:label "List atmospheric pressure sensor data files from {mac} on {hostname}" ;
+	rdfs:label "Atmospheric pressure sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/pressure/" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/pressure.{srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :GET-temperature-200
-	rdfs:label "List temperature sensor data files from {mac} on {hostname}" ;
+	rdfs:label "Temperature sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/temperature/" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/temperature.{srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .

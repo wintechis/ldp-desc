@@ -47,42 +47,74 @@
 <span class="label">Delete /msds/{hostname}/{mac}/ and subordinate resources</span></summary>
 <p>foobar</p>
 <p>200</p><a href="file:///#DELETE-mac-200">file:///#DELETE-mac-200</a></details>
-<h2>Sensor Observations</h2>
-<p>The sensor observations by date (@@@fix) in SOSA/SSN vocabulary.</p>
+<h2>Date</h2>
+<p>The collection resource for sensor data by date.</p>
+<details class="interaction put">
+<summary><span class="method put">PUT</span>
+<span class="path">/msds/{hostname}/{mac}/{date}/</span>
+<span class="label">Create /msds/{hostname}/{mac}/{date}/ collection resource</span></summary>
+<p>foobar</p>
+<p>201</p><a href="file:///#CREATE-PUT-date-201">file:///#CREATE-PUT-date-201</a></details>
 <details class="interaction get">
 <summary><span class="method get">GET</span>
-<span class="path">/msds/{hostname}/{mac}/acceleration-x/</span>
-<span class="label">Retrieve information about /msds/{hostname}/{mac}/acceleration-x/</span></summary>
+<span class="path">/msds/{hostname}/{mac}/{date}/</span>
+<span class="label">Retrieve information about /msds/{hostname}/{mac}/{date}/</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#READ-date-200">file:///#READ-date-200</a></details>
+<details class="interaction delete">
+<summary><span class="method delete">DELETE</span>
+<span class="path">/msds/{hostname}/{mac}/{date}/</span>
+<span class="label">Delete /msds/{hostname}/{mac}/{date}/ and subordinate resources</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#DELETE-date-200">file:///#DELETE-date-200</a></details>
+<h2>Sensor Observations</h2>
+<p>The sensor observations in CSV, Turtle using the SOSA/SSN vocabulary, SPARQL Results Format and HTML. @@@format of the meta file?</p>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/{mac}/{date}/data.csv</span>
+<span class="label">Sensor data from {mac} on {hostname} for {date} in CSV</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#GET-csv-200">file:///#GET-csv-200</a></details>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/{mac}/{date}/data.ttl</span>
+<span class="label">Sensor data from {mac} on {hostname} for {date} in Turtle</span></summary>
+<p>foobar</p>
+<p>200</p><a href="file:///#GET-turtle-200">file:///#GET-turtle-200</a></details>
+<details class="interaction get">
+<summary><span class="method get">GET</span>
+<span class="path">/msds/{hostname}/{mac}/{date}/acceleration-x.{srj,html}</span>
+<span class="label">Acceleration x-axis sensor data files from {mac} on {hostname} for {date}</span></summary>
 <p>foobar</p>
 <p>200</p><a href="file:///#GET-accel-x-200">file:///#GET-accel-x-200</a></details>
 <details class="interaction get">
 <summary><span class="method get">GET</span>
-<span class="path">/msds/{hostname}/{mac}/acceleration-y/</span>
-<span class="label">Retrieve information about /msds/{hostname}/{mac}/acceleration-y/</span></summary>
+<span class="path">/msds/{hostname}/{mac}/{date}/acceleration-y.{srj,html}</span>
+<span class="label">Acceleration y-axis sensor data files from {mac} on {hostname} for {date}</span></summary>
 <p>foobar</p>
 <p>200</p><a href="file:///#GET-accel-y-200">file:///#GET-accel-y-200</a></details>
 <details class="interaction get">
 <summary><span class="method get">GET</span>
-<span class="path">/msds/{hostname}/{mac}/acceleration-z/</span>
-<span class="label">Retrieve information about /msds/{hostname}/{mac}/acceleration-z/</span></summary>
+<span class="path">/msds/{hostname}/{mac}/{date}/acceleration.{srj,html}</span>
+<span class="label">Acceleration z-axis sensor data files from {mac} on {hostname} for {date}</span></summary>
 <p>foobar</p>
 <p>200</p><a href="file:///#GET-accel-z-200">file:///#GET-accel-z-200</a></details>
 <details class="interaction get">
 <summary><span class="method get">GET</span>
-<span class="path">/msds/{hostname}/{mac}/humidity/</span>
-<span class="label">List humidity sensor data files from {mac} on {hostname}</span></summary>
+<span class="path">/msds/{hostname}/{mac}/{date}/humidity.{srj,html}</span>
+<span class="label">Humidity sensor data files from {mac} on {hostname} for {date}</span></summary>
 <p>foobar</p>
 <p>200</p><a href="file:///#GET-humidity-200">file:///#GET-humidity-200</a></details>
 <details class="interaction get">
 <summary><span class="method get">GET</span>
-<span class="path">/msds/{hostname}/{mac}/pressure/</span>
-<span class="label">List atmospheric pressure sensor data files from {mac} on {hostname}</span></summary>
+<span class="path">/msds/{hostname}/{mac}/{date}/pressure.{srj,html}</span>
+<span class="label">Atmospheric pressure sensor data files from {mac} on {hostname} for {date}</span></summary>
 <p>foobar</p>
 <p>200</p><a href="file:///#GET-pressure-200">file:///#GET-pressure-200</a></details>
 <details class="interaction get">
 <summary><span class="method get">GET</span>
-<span class="path">/msds/{hostname}/{mac}/temperature/</span>
-<span class="label">List temperature sensor data files from {mac} on {hostname}</span></summary>
+<span class="path">/msds/{hostname}/{mac}/{date}/temperature.{srj,html}</span>
+<span class="label">Temperature sensor data files from {mac} on {hostname} for {date}</span></summary>
 <p>foobar</p>
 <p>200</p><a href="file:///#GET-temperature-200">file:///#GET-temperature-200</a></details>
 
