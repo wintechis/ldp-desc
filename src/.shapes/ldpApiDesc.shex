@@ -8,6 +8,7 @@ PREFIX dc: <http://purl.org/dc/elements/1.1/>
 ex:LdpApiDesc {
   a [ owl:Ontology ] ;
   dc:title xsd:string ;
+  dc:description xsd:string ;
   owl:versionInfo xsd:string ;
   rdfs:seeAlso @http:HttpConnection *
 }

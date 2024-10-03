@@ -10,67 +10,128 @@
 
 <> a owl:Ontology ;
    dc:title "Ready-set-go Server API" ;
+   dc:description "Interactions, i.e., requests/response pairs, with the ready-set-go server." ;
    owl:versionInfo "0.1.0" ;
    rdfs:seeAlso :group-rsg , :group-ready , :group-set , :group-go .
 
 :group-rsg
 	rdfs:label "Ready-set-go" ;
 	rdfs:comment "The ready-set-go process with three steps." ;
-	http:requests rsg:CREATE-POST-rsg-id-201 , rsg:RPC-rsg-id-200 , rsg:DELETE-rsg-id-410 .
+	http:requests rsg:READ-rsg-index-200 , rsg:CREATE-POST-rsg-index-201 , rsg:READ-rsg-id-200 , rsg:RPC-rsg-id-200 , rsg:DELETE-rsg-id-410 .
 
 :group-ready
 	rdfs:label "Ready" ;
 	rdfs:comment "The first step." ;
-	http:requests ready:CREATE-PUT-ready-id-201 .
+	http:requests ready:CREATE-PUT-ready-id-201 , ready:READ-ready-id-200 , ready:UPDATE-ready-id-200 , ready:DELETE-ready-id-200 .
 
 :group-set
 	rdfs:label "Set" ;
 	rdfs:comment "The second step." ;
-	http:requests set:CREATE-PUT-set-id-201 .
+	http:requests set:CREATE-PUT-set-id-201 , set:READ-set-id-200 , set:UPDATE-set-id-200 , set:DELETE-set-id-200 .
 
 :group-go
 	rdfs:label "Go" ;
 	rdfs:comment "The third (and final) step." ;
-	http:requests go:CREATE-PUT-go-id-201 .
+	http:requests go:CREATE-PUT-go-id-201 , go:READ-go-id-200 , go:UPDATE-go-id-200 , go:DELETE-go-id-200 .
 
-rsg:CREATE-POST-rsg-id-201
-	rdfs:label "Create /rsg/{id} and subordinate resources" ;
+rsg:READ-rsg-index-200
+	rdfs:label "READ /rsg/index to get state, links and forms" ;
+	http:method "GET" ;
+	http:absolutePath "/rsg/index" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
+rsg:CREATE-POST-rsg-index-201
+	rdfs:label "Create /rsg/{id} (EXISTS-rsg-id) and subordinate resources (NOT-EXISTS-ready-id...)" ;
 	http:method "POST" ;
 	http:absolutePath "/rsg/index" ;
 	http:resp [ http:statusCodeNumber 201 ] .
 
 rsg:READ-rsg-id-200
-	rdfs:label "Read /rsg/{id}" ;
+	rdfs:label "Read /rsg/{id} to get state, links and forms" ;
 	http:method "GET" ;
 	http:absolutePath "/rsg/{id}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 rsg:RPC-rsg-id-200
-	rdfs:label "Reinitialise /rsg/{id}" ;
+	rdfs:label "Reinitialise /rsg/{id} (EXISTS-rsg-id, NOT-EXISTS-ready-id...)" ;
 	http:method "POST" ;
 	http:absolutePath "/rsg/{id}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 rsg:DELETE-rsg-id-410
-	rdfs:label "Delete /rsg/{id} and subordinate resources" ;
+	rdfs:label "Delete /rsg/{id} (GONE-id) and subordinate resources for good" ;
 	http:method "DELETE" ;
 	http:absolutePath "/rsg/{id}" ;
 	http:resp [ http:statusCodeNumber 410 ] .
 
 ready:CREATE-PUT-ready-id-201
-	rdfs:label "Create /ready/{id} and advance /rsg/{id} to READY" ;
+	rdfs:label "Create /ready/{id} (NOT-EXISTS-ready-id) and advance /rsg/{id} to READY-id" ;
 	http:method "PUT" ;
 	http:absolutePath "/ready/{id}" ;
 	http:resp [ http:statusCodeNumber 201 ] .
 
+ready:READ-ready-id-200
+	rdfs:label "Read /ready/{id} to get state, links and forms" ;
+	http:method "GET" ;
+	http:absolutePath "/ready/{id}" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
+ready:UPDATE-ready-id-200
+	rdfs:label "Update /ready/{id}" ;
+	http:method "PUT" ;
+	http:absolutePath "/ready/{id}" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
+ready:DELETE-ready-id-200
+	rdfs:label "Delete /ready/{id} (NOT-EXISTS-ready-id) and put /rsg/{id} back to EXISTS-rsg-id" ;
+	http:method "DELETE" ;
+	http:absolutePath "/ready/{id}" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
 set:CREATE-PUT-set-id-201
-	rdfs:label "Create /set/{id} and advance /rsg/{id} to SET" ;
+	rdfs:label "Create /set/{id} (NOT-EXISTS-set-id) and advance /rsg/{id} to SET-id" ;
 	http:method "PUT" ;
 	http:absolutePath "/set/{id}" ;
 	http:resp [ http:statusCodeNumber 201 ] .
 
+set:READ-set-id-200
+	rdfs:label "Read /set/{id} to get state, links and forms" ;
+	http:method "GET" ;
+	http:absolutePath "/set/{id}" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
+set:UPDATE-set-id-200
+	rdfs:label "Update /set/{id}" ;
+	http:method "PUT" ;
+	http:absolutePath "/set/{id}" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
+set:DELETE-set-id-200
+	rdfs:label "Delete /set/{id} (NOT-EXISTS-set-id) and put /rsg/{id} back to READY-id" ;
+	http:method "DELETE" ;
+	http:absolutePath "/set/{id}" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
 go:CREATE-PUT-go-id-201
-	rdfs:label "Create /go/{id} and advance /rsg/{id} to GO" ;
+	rdfs:label "Create /go/{id} (NOT-EXISTS-go-id) and advance /rsg/{id} to GO-id" ;
 	http:method "PUT" ;
 	http:absolutePath "/go/{id}" ;
 	http:resp [ http:statusCodeNumber 201 ]  .
+
+go:READ-go-id-200
+	rdfs:label "Read /go/{id} to get state, links and forms" ;
+	http:method "GET" ;
+	http:absolutePath "/go/{id}" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
+go:UPDATE-go-id-200
+	rdfs:label "Update /go/{id}" ;
+	http:method "PUT" ;
+	http:absolutePath "/go/{id}" ;
+	http:resp [ http:statusCodeNumber 200 ] .
+
+go:DELETE-go-id-200
+	rdfs:label "Delete /go/{id} (NOT-EXISTS-go-id) and put /rsg/{id} back to SET-id" ;
+	http:method "DELETE" ;
+	http:absolutePath "/go/{id}" ;
+	http:resp [ http:statusCodeNumber 200 ] .

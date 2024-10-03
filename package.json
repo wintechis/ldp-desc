@@ -4,11 +4,10 @@
       "js-beautify": "^1.15.1"
   },
   "scripts": {
-    "prebuild": "rimraf dist/",
-    "build": "ldo build --input .shapes --output .ldo ; tsc",
+      "prebuild": "rimraf dist/ ; rimraf .ldo ; npm run build:ldo",
+    "build": "tsc",
     "lint": "eslint . --ext .ts",
     "test": "mocha dist/test/",
-    "ldo:build": "ldo build --input .shapes --output .ldo",
     "build:ldo": "ldo build --input src/.shapes --output src/.ldo"
   },
   "devDependencies": {

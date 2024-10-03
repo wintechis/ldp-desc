@@ -86,7 +86,7 @@
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-turtle-200
-	rdfs:label "Sensor data from {mac} on {hostname} for {date} in Turtle" ;
+	rdfs:label "Sensor data from {mac} on {hostname} for {date} in Turtle @@@N-Quads" ;
 	http:method "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/data.ttl";
 	http:resp [ http:statusCodeNumber 200 ] .
@@ -94,35 +94,35 @@
 :READ-accel-x-200
 	rdfs:label "Acceleration x-axis sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-x.{srj,html}" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-x.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-accel-y-200
 	rdfs:label "Acceleration y-axis sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-y.{srj,html}" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-y.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-accel-z-200
 	rdfs:label "Acceleration z-axis sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-z.{srj,html}" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-z.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-humidity-200
 	rdfs:label "Humidity sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/{date}/humidity.{srj,html}" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/humidity.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ]  .
 
 :READ-pressure-200
 	rdfs:label "Atmospheric pressure sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/{date}/pressure.{srj,html}" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/pressure.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-temperature-200
 	rdfs:label "Temperature sensor data files from {mac} on {hostname} for {date}" ;
 	http:method "GET" ;
-	http:absolutePath "/msds/{hostname}/{mac}/{date}/temperature.{srj,html}" ;
+	http:absolutePath "/msds/{hostname}/{mac}/{date}/temperature.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
