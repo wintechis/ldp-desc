@@ -10,12 +10,12 @@ The RDF file contains descriptions in the [W3C HTTP Vocabulary](https://www.w3.o
 
 ## Run
 
-To create an HTML document from an RDF description, run the following command.
 The script `dist/src/index.js` reads RDF in Turtle syntax from stdin and outputs HTML to stdout.
+To create an HTML document from an RDF description, run the following command.
 
     $ cat desc/msds-api.ttl | node dist/src/index.js > desc/msds-api.html
 
-The `desc/msds-api.ttl` file contains descriptions of individual HTTP requests.
+The `desc/msds-api.ttl` file contains descriptions of individual HTTP request/response pairs or HTTP request/response templates.
 
     :READ-hostname-200
         rdfs:label "Retrieve information about /msds/{hostname}/" ;
@@ -30,9 +30,10 @@ The `desc/msds-api.ttl` file also contains general descriptions.
         owl:versionInfo "0.1.0 (Waischenfeld)" ;
         rdfs:seeAlso :hostname .
 
-The first three triples are self-explanatory.
+The first three triples contain general information.
 The `dc:title` becomes the `h1` tag in the generated HTML document.
-The `rdfs:seeAlso` triple(s) link to gropus of HTTP requests (read on).
+The `owl:versionInfo` is rendered after the title.
+The `rdfs:seeAlso` triple(s) link to groups of HTTP requests (read on).
 
 To be able to group HTTP requests together, ldp-desc abuses the `http:requests` property, which is supposed to relate multiple HTTP requests to a connection.
 
@@ -56,6 +57,8 @@ https://redocly.github.io/redoc/#tag/Events/operation/listSpecialEvents
 https://gist.github.com/oseiskar/dbd51a3727fc96dcf5ed189fca491fb3 (swagger-yaml-to-html.py)
 
 ## Example TD
+
+Note to self: for inspiration a very basic [W3C Web of Things Thing Description](https://www.w3.org/TR/wot-thing-description11/) in Turtle serialisation.
 
     @prefix td: <https://www.w3.org/2019/wot/td#> .
     @prefix htv: <http://www.w3.org/2011/http#> .
