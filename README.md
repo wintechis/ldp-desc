@@ -1,7 +1,7 @@
 # Descriptions of Linked Data Platform (LDP) Interfaces
 
 The current ldp-desc script converts an RDF file into a HTML document.
-The RDF file contains descriptions in the [W3C HTTP Vocabulary](https://www.w3.org/TR/HTTP-in-RDF/) using URIs in [RFC 6570 URI Template](https://www.rfc-editor.org/rfc/rfc6570) syntax.
+The RDF file contains descriptions of HTTP request/response pairs in the [W3C HTTP Vocabulary](https://www.w3.org/TR/HTTP-in-RDF/) using URIs in [RFC 6570 URI Template](https://www.rfc-editor.org/rfc/rfc6570) syntax.
 
 ## Installation
 
