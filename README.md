@@ -1,8 +1,51 @@
 # Descriptions of Linked Data Platform (LDP) Interfaces
 
+The current ldp-desc script converts an RDF file into a HTML document.
+The RDF file contains descriptions in the [W3C HTTP Vocabulary](https://www.w3.org/TR/HTTP-in-RDF/) using URIs in [RFC 6570 URI Template](https://www.rfc-editor.org/rfc/rfc6570) syntax.
+
+## Installation
+
     $ npm install
     $ npm run build
+
+## Run
+
+To create an HTML document from an RDF description, run the following command.
+The script `dist/src/index.js` reads RDF in Turtle syntax from stdin and outputs HTML to stdout.
+
     $ cat desc/msds-api.ttl | node dist/src/index.js > desc/msds-api.html
+
+The `desc/msds-api.ttl` file contains descriptions of individual HTTP requests.
+
+    :READ-hostname-200
+        rdfs:label "Retrieve information about /msds/{hostname}/" ;
+        http:method "GET" ;
+        http:absolutePath "/msds/{hostname}/" ;
+        http:resp [ http:statusCodeNumber 200 ] .
+
+The `desc/msds-api.ttl` file also contains general descriptions.
+
+    <> a owl:Ontology ;
+        dc:title "Minimal Solid Dataspace Server API" ;
+        owl:versionInfo "0.1.0 (Waischenfeld)" ;
+        rdfs:seeAlso :hostname .
+
+The first three triples are self-explanatory.
+The `dc:title` becomes the `h1` tag in the generated HTML document.
+The `rdfs:seeAlso` triple(s) link to gropus of HTTP requests (read on).
+
+To be able to group HTTP requests together, ldp-desc abuses the `http:requests` property, which is supposed to relate multiple HTTP requests to a connection.
+
+    :hostname http:requests :READ-hostname-200 ;
+        rdfs:label "Hosts" ;
+        rdfs:comment "The collection resource for hosts identified via hostname." .
+
+In ldp-desc, we interpret a "connection" as a group of HTTP requests, where the `rdfs:label` becomes a `h2` tag in the generated HTML document and the `rdfs:comment` is rendered as a brief description.
+
+## Linking the Style Sheet
+
+The generated HTML file references `style.css`.
+Make sure that the CSS file is in the same directory as the generated HTML document.
 
 ## See Also
 
