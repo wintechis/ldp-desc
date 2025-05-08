@@ -20,7 +20,7 @@ The `desc/msds-api.ttl` file contains descriptions of individual HTTP request/re
 
     :READ-hostname-200
         rdfs:label "Retrieve information about /msds/{hostname}/" ;
-        http:method "GET" ;
+        http:methodName "GET" ;
         http:absolutePath "/msds/{hostname}/" ;
         http:resp [ http:statusCodeNumber 200 ] .
 

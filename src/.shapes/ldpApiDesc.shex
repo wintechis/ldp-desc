@@ -21,7 +21,7 @@ http:HttpConnection {
 
 http:HttpRequest {
   rdfs:label xsd:string ;
-  http:method xsd:string ;
+  http:methodName xsd:string ;
   http:absolutePath xsd:string ;
   http:resp @http:HttpResponse ;
 }
