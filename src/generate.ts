@@ -8,8 +8,8 @@
  */
 
 import { parseRdf } from '@ldo/ldo';
-import { LdpApiDescShapeType } from '../.ldo/ldpApiDesc.shapeTypes';
-import { HttpConnection, HttpRequest } from '../.ldo/ldpApiDesc.typings';
+import { LdpApiDescShapeType } from './.ldo/ldpApiDesc.shapeTypes';
+import { HttpConnection, HttpRequest } from './.ldo/ldpApiDesc.typings';
 import { html_beautify as htmlBeautify } from 'js-beautify';
 
 const BASE = 'file:///';
