@@ -16,35 +16,35 @@
     <h2>Ready-set-go</h2>
     <p>The ready-set-go process with three steps.</p>
     <details id="rsg/indexREAD-rsg-index-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/rsg/index</span>
             <span class="label">READ /rsg/index to get state, links and forms</span>
         </summary>
         <p>200</p><a href="rsg/index#READ-rsg-index-200">rsg/index#READ-rsg-index-200</a>
     </details>
     <details id="rsg/indexCREATE-POST-rsg-index-201" class="interaction post">
-        <summary><span class="method post">POST</span>
+        <summary><span class="methodName post">POST</span>
             <span class="path">/rsg/index</span>
             <span class="label">Create /rsg/{id} (EXISTS-rsg-id) and subordinate resources (NOT-EXISTS-ready-id...)</span>
         </summary>
         <p>201</p><a href="rsg/index#CREATE-POST-rsg-index-201">rsg/index#CREATE-POST-rsg-index-201</a>
     </details>
     <details id="rsg/indexREAD-rsg-id-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/rsg/{id}</span>
             <span class="label">Read /rsg/{id} to get state, links and forms</span>
         </summary>
         <p>200</p><a href="rsg/index#READ-rsg-id-200">rsg/index#READ-rsg-id-200</a>
     </details>
     <details id="rsg/indexRPC-rsg-id-200" class="interaction post">
-        <summary><span class="method post">POST</span>
+        <summary><span class="methodName post">POST</span>
             <span class="path">/rsg/{id}</span>
             <span class="label">Reinitialise /rsg/{id} (EXISTS-rsg-id, NOT-EXISTS-ready-id...)</span>
         </summary>
         <p>200</p><a href="rsg/index#RPC-rsg-id-200">rsg/index#RPC-rsg-id-200</a>
     </details>
     <details id="rsg/indexDELETE-rsg-id-410" class="interaction delete">
-        <summary><span class="method delete">DELETE</span>
+        <summary><span class="methodName delete">DELETE</span>
             <span class="path">/rsg/{id}</span>
             <span class="label">Delete /rsg/{id} (GONE-id) and subordinate resources for good</span>
         </summary>
@@ -53,28 +53,28 @@
     <h2>Ready</h2>
     <p>The first step.</p>
     <details id="ready/indexCREATE-PUT-ready-id-201" class="interaction put">
-        <summary><span class="method put">PUT</span>
+        <summary><span class="methodName put">PUT</span>
             <span class="path">/ready/{id}</span>
             <span class="label">Create /ready/{id} (NOT-EXISTS-ready-id) and advance /rsg/{id} to READY-id</span>
         </summary>
         <p>201</p><a href="ready/index#CREATE-PUT-ready-id-201">ready/index#CREATE-PUT-ready-id-201</a>
     </details>
     <details id="ready/indexREAD-ready-id-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/ready/{id}</span>
             <span class="label">Read /ready/{id} to get state, links and forms</span>
         </summary>
         <p>200</p><a href="ready/index#READ-ready-id-200">ready/index#READ-ready-id-200</a>
     </details>
     <details id="ready/indexUPDATE-ready-id-200" class="interaction put">
-        <summary><span class="method put">PUT</span>
+        <summary><span class="methodName put">PUT</span>
             <span class="path">/ready/{id}</span>
             <span class="label">Update /ready/{id}</span>
         </summary>
         <p>200</p><a href="ready/index#UPDATE-ready-id-200">ready/index#UPDATE-ready-id-200</a>
     </details>
     <details id="ready/indexDELETE-ready-id-200" class="interaction delete">
-        <summary><span class="method delete">DELETE</span>
+        <summary><span class="methodName delete">DELETE</span>
             <span class="path">/ready/{id}</span>
             <span class="label">Delete /ready/{id} (NOT-EXISTS-ready-id) and put /rsg/{id} back to EXISTS-rsg-id</span>
         </summary>
@@ -83,28 +83,28 @@
     <h2>Set</h2>
     <p>The second step.</p>
     <details id="set/indexCREATE-PUT-set-id-201" class="interaction put">
-        <summary><span class="method put">PUT</span>
+        <summary><span class="methodName put">PUT</span>
             <span class="path">/set/{id}</span>
             <span class="label">Create /set/{id} (NOT-EXISTS-set-id) and advance /rsg/{id} to SET-id</span>
         </summary>
         <p>201</p><a href="set/index#CREATE-PUT-set-id-201">set/index#CREATE-PUT-set-id-201</a>
     </details>
     <details id="set/indexREAD-set-id-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/set/{id}</span>
             <span class="label">Read /set/{id} to get state, links and forms</span>
         </summary>
         <p>200</p><a href="set/index#READ-set-id-200">set/index#READ-set-id-200</a>
     </details>
     <details id="set/indexUPDATE-set-id-200" class="interaction put">
-        <summary><span class="method put">PUT</span>
+        <summary><span class="methodName put">PUT</span>
             <span class="path">/set/{id}</span>
             <span class="label">Update /set/{id}</span>
         </summary>
         <p>200</p><a href="set/index#UPDATE-set-id-200">set/index#UPDATE-set-id-200</a>
     </details>
     <details id="set/indexDELETE-set-id-200" class="interaction delete">
-        <summary><span class="method delete">DELETE</span>
+        <summary><span class="methodName delete">DELETE</span>
             <span class="path">/set/{id}</span>
             <span class="label">Delete /set/{id} (NOT-EXISTS-set-id) and put /rsg/{id} back to READY-id</span>
         </summary>
@@ -113,28 +113,28 @@
     <h2>Go</h2>
     <p>The third (and final) step.</p>
     <details id="go/indexCREATE-PUT-go-id-201" class="interaction put">
-        <summary><span class="method put">PUT</span>
+        <summary><span class="methodName put">PUT</span>
             <span class="path">/go/{id}</span>
             <span class="label">Create /go/{id} (NOT-EXISTS-go-id) and advance /rsg/{id} to GO-id</span>
         </summary>
         <p>201</p><a href="go/index#CREATE-PUT-go-id-201">go/index#CREATE-PUT-go-id-201</a>
     </details>
     <details id="go/indexREAD-go-id-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/go/{id}</span>
             <span class="label">Read /go/{id} to get state, links and forms</span>
         </summary>
         <p>200</p><a href="go/index#READ-go-id-200">go/index#READ-go-id-200</a>
     </details>
     <details id="go/indexUPDATE-go-id-200" class="interaction put">
-        <summary><span class="method put">PUT</span>
+        <summary><span class="methodName put">PUT</span>
             <span class="path">/go/{id}</span>
             <span class="label">Update /go/{id}</span>
         </summary>
         <p>200</p><a href="go/index#UPDATE-go-id-200">go/index#UPDATE-go-id-200</a>
     </details>
     <details id="go/indexDELETE-go-id-200" class="interaction delete">
-        <summary><span class="method delete">DELETE</span>
+        <summary><span class="methodName delete">DELETE</span>
             <span class="path">/go/{id}</span>
             <span class="label">Delete /go/{id} (NOT-EXISTS-go-id) and put /rsg/{id} back to SET-id</span>
         </summary>

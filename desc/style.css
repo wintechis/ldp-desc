@@ -9,7 +9,7 @@ body {
     padding: .23em;
 }
 
-span.method {
+span.methodName {
     color: white;
     font-weight: bold;
     width: 6em;

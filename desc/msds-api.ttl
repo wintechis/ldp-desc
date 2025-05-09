@@ -27,102 +27,102 @@
 
 :CREATE-PUT-hostname-201
 	rdfs:label "Create /msds/{hostname}/ collection resource" ;
-	http:method "PUT" ;
+	http:methodName "PUT" ;
 	http:absolutePath "/msds/{hostname}/" ;
 	http:resp [ http:statusCodeNumber 201 ] .
 
 :READ-hostname-200
 	rdfs:label "Retrieve information about /msds/{hostname}/" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :DELETE-hostname-200
 	rdfs:label "Delete /msds/{hostname}/ and subordinate resources" ;
-	http:method "DELETE" ;
+	http:methodName "DELETE" ;
 	http:absolutePath "/msds/{hostname}/" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :CREATE-PUT-mac-201
 	rdfs:label "Create /msds/{hostname}/{mac}/ collection resource" ;
-	http:method "PUT" ;
+	http:methodName "PUT" ;
 	http:absolutePath "/msds/{hostname}/{mac}/" ;
 	http:resp [ http:statusCodeNumber 201 ] .
 
 :READ-mac-200
 	rdfs:label "Retrieve information about /msds/{hostname}/{mac}/" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :DELETE-mac-200
 	rdfs:label "Delete /msds/{hostname}/{mac}/ and subordinate resources" ;
-	http:method "DELETE" ;
+	http:methodName "DELETE" ;
 	http:absolutePath "/msds/{hostname}/{mac}/" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :CREATE-PUT-date-201
 	rdfs:label "Create /msds/{hostname}/{mac}/{date}/ collection resource" ;
-	http:method "PUT" ;
+	http:methodName "PUT" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/" ;
 	http:resp [ http:statusCodeNumber 201 ] .
 
 :READ-date-200
 	rdfs:label "Retrieve information about /msds/{hostname}/{mac}/{date}/" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :DELETE-date-200
 	rdfs:label "Delete /msds/{hostname}/{mac}/{date}/ and subordinate resources" ;
-	http:method "DELETE" ;
+	http:methodName "DELETE" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-csv-200
 	rdfs:label "Sensor data from {mac} on {hostname} for {date} in CSV" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/data.csv";
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-turtle-200
 	rdfs:label "Sensor data from {mac} on {hostname} for {date} in Turtle @@@N-Quads" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/data.ttl";
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-accel-x-200
 	rdfs:label "Acceleration x-axis sensor data files from {mac} on {hostname} for {date}" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-x.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-accel-y-200
 	rdfs:label "Acceleration y-axis sensor data files from {mac} on {hostname} for {date}" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-y.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-accel-z-200
 	rdfs:label "Acceleration z-axis sensor data files from {mac} on {hostname} for {date}" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/acceleration-z.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-humidity-200
 	rdfs:label "Humidity sensor data files from {mac} on {hostname} for {date}" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/humidity.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ]  .
 
 :READ-pressure-200
 	rdfs:label "Atmospheric pressure sensor data files from {mac} on {hostname} for {date}" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/pressure.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .
 
 :READ-temperature-200
 	rdfs:label "Temperature sensor data files from {mac} on {hostname} for {date}" ;
-	http:method "GET" ;
+	http:methodName "GET" ;
 	http:absolutePath "/msds/{hostname}/{mac}/{date}/temperature.{ttl,srj,html}" ;
 	http:resp [ http:statusCodeNumber 200 ] .

@@ -8,8 +8,8 @@
  */
 
 import { parseRdf } from '@ldo/ldo';
-import { LdpApiDescShapeType } from '../.ldo/ldpApiDesc.shapeTypes';
-import { HttpConnection, HttpRequest } from '../.ldo/ldpApiDesc.typings';
+import { LdpApiDescShapeType } from './.ldo/ldpApiDesc.shapeTypes';
+import { HttpConnection, HttpRequest } from './.ldo/ldpApiDesc.typings';
 import { html_beautify as htmlBeautify } from 'js-beautify';
 
 const BASE = 'file:///';
@@ -65,8 +65,8 @@ function renderRequestResponse(items: HttpRequest[] | undefined) {
             return result;
         }
 
-        result = result.concat(`<details id="${id.replace('#', '')}" class="interaction ${item.method.toLowerCase()}">\n`);
-        result = result.concat(`<summary><span class="method ${item.method.toLowerCase()}">${item.method}</span>\n`);
+        result = result.concat(`<details id="${id.replace('#', '')}" class="interaction ${item.methodName.toLowerCase()}">\n`);
+        result = result.concat(`<summary><span class="methodName ${item.methodName.toLowerCase()}">${item.methodName}</span>\n`);
         result = result.concat(`<span class="path">${item.absolutePath}</span>\n`);
         result = result.concat(`<span class="label">${item.label}</span></summary>\n`);
         if (item.resp !== undefined) {

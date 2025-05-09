@@ -14,21 +14,21 @@
     <h2>Hosts</h2>
     <p>The collection resource for hosts identified via hostname.</p>
     <details id="CREATE-PUT-hostname-201" class="interaction put">
-        <summary><span class="method put">PUT</span>
+        <summary><span class="methodName put">PUT</span>
             <span class="path">/msds/{hostname}/</span>
             <span class="label">Create /msds/{hostname}/ collection resource</span>
         </summary>
         <p>201</p><a href="#CREATE-PUT-hostname-201">#CREATE-PUT-hostname-201</a>
     </details>
     <details id="READ-hostname-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/</span>
             <span class="label">Retrieve information about /msds/{hostname}/</span>
         </summary>
         <p>200</p><a href="#READ-hostname-200">#READ-hostname-200</a>
     </details>
     <details id="DELETE-hostname-200" class="interaction delete">
-        <summary><span class="method delete">DELETE</span>
+        <summary><span class="methodName delete">DELETE</span>
             <span class="path">/msds/{hostname}/</span>
             <span class="label">Delete /msds/{hostname}/ and subordinate resources</span>
         </summary>
@@ -37,21 +37,21 @@
     <h2>RuuviTag Sensors</h2>
     <p>The collection resource for RuuviTag sensor nodes identified via MAC address.</p>
     <details id="CREATE-PUT-mac-201" class="interaction put">
-        <summary><span class="method put">PUT</span>
+        <summary><span class="methodName put">PUT</span>
             <span class="path">/msds/{hostname}/{mac}/</span>
             <span class="label">Create /msds/{hostname}/{mac}/ collection resource</span>
         </summary>
         <p>201</p><a href="#CREATE-PUT-mac-201">#CREATE-PUT-mac-201</a>
     </details>
     <details id="READ-mac-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/{mac}/</span>
             <span class="label">Retrieve information about /msds/{hostname}/{mac}/</span>
         </summary>
         <p>200</p><a href="#READ-mac-200">#READ-mac-200</a>
     </details>
     <details id="DELETE-mac-200" class="interaction delete">
-        <summary><span class="method delete">DELETE</span>
+        <summary><span class="methodName delete">DELETE</span>
             <span class="path">/msds/{hostname}/{mac}/</span>
             <span class="label">Delete /msds/{hostname}/{mac}/ and subordinate resources</span>
         </summary>
@@ -60,21 +60,21 @@
     <h2>Date</h2>
     <p>The collection resource for sensor data by date.</p>
     <details id="CREATE-PUT-date-201" class="interaction put">
-        <summary><span class="method put">PUT</span>
+        <summary><span class="methodName put">PUT</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/</span>
             <span class="label">Create /msds/{hostname}/{mac}/{date}/ collection resource</span>
         </summary>
         <p>201</p><a href="#CREATE-PUT-date-201">#CREATE-PUT-date-201</a>
     </details>
     <details id="READ-date-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/</span>
             <span class="label">Retrieve information about /msds/{hostname}/{mac}/{date}/</span>
         </summary>
         <p>200</p><a href="#READ-date-200">#READ-date-200</a>
     </details>
     <details id="DELETE-date-200" class="interaction delete">
-        <summary><span class="method delete">DELETE</span>
+        <summary><span class="methodName delete">DELETE</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/</span>
             <span class="label">Delete /msds/{hostname}/{mac}/{date}/ and subordinate resources</span>
         </summary>
@@ -83,56 +83,56 @@
     <h2>Sensor Observations</h2>
     <p>The sensor observations in CSV, Turtle using the SOSA/SSN vocabulary, SPARQL Results Format and HTML. @@@format of the meta file?</p>
     <details id="READ-csv-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/data.csv</span>
             <span class="label">Sensor data from {mac} on {hostname} for {date} in CSV</span>
         </summary>
         <p>200</p><a href="#READ-csv-200">#READ-csv-200</a>
     </details>
     <details id="READ-turtle-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/data.ttl</span>
             <span class="label">Sensor data from {mac} on {hostname} for {date} in Turtle @@@N-Quads</span>
         </summary>
         <p>200</p><a href="#READ-turtle-200">#READ-turtle-200</a>
     </details>
     <details id="READ-accel-x-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/acceleration-x.{ttl,srj,html}</span>
             <span class="label">Acceleration x-axis sensor data files from {mac} on {hostname} for {date}</span>
         </summary>
         <p>200</p><a href="#READ-accel-x-200">#READ-accel-x-200</a>
     </details>
     <details id="READ-accel-y-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/acceleration-y.{ttl,srj,html}</span>
             <span class="label">Acceleration y-axis sensor data files from {mac} on {hostname} for {date}</span>
         </summary>
         <p>200</p><a href="#READ-accel-y-200">#READ-accel-y-200</a>
     </details>
     <details id="READ-accel-z-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/acceleration-z.{ttl,srj,html}</span>
             <span class="label">Acceleration z-axis sensor data files from {mac} on {hostname} for {date}</span>
         </summary>
         <p>200</p><a href="#READ-accel-z-200">#READ-accel-z-200</a>
     </details>
     <details id="READ-humidity-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/humidity.{ttl,srj,html}</span>
             <span class="label">Humidity sensor data files from {mac} on {hostname} for {date}</span>
         </summary>
         <p>200</p><a href="#READ-humidity-200">#READ-humidity-200</a>
     </details>
     <details id="READ-pressure-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/pressure.{ttl,srj,html}</span>
             <span class="label">Atmospheric pressure sensor data files from {mac} on {hostname} for {date}</span>
         </summary>
         <p>200</p><a href="#READ-pressure-200">#READ-pressure-200</a>
     </details>
     <details id="READ-temperature-200" class="interaction get">
-        <summary><span class="method get">GET</span>
+        <summary><span class="methodName get">GET</span>
             <span class="path">/msds/{hostname}/{mac}/{date}/temperature.{ttl,srj,html}</span>
             <span class="label">Temperature sensor data files from {mac} on {hostname} for {date}</span>
         </summary>
