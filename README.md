@@ -14,7 +14,7 @@ The look and feel of the HTML document emulates [OpenAPI descriptions](https://s
 The script `dist/index.js` reads RDF in Turtle syntax from stdin and outputs HTML to stdout.
 To create an HTML document from an RDF description, run the following command.
 
-    $ cat desc/msds-api.ttl | node dist/src/index.js > desc/msds-api.html
+    $ cat desc/msds-api.ttl | node dist/index.js > desc/msds-api.html
 
 The `desc/msds-api.ttl` file contains descriptions of individual HTTP request/response pairs or HTTP request/response templates.
 
